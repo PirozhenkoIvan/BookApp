@@ -7,8 +7,12 @@ part 'top_ios_interface.g.dart';
 Widget topInterface(BuildContext context) {
   return Container(
     margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+    color: CupertinoColors.tertiarySystemBackground,
     child: CupertinoPageScaffold(
+        backgroundColor: CupertinoColors.tertiarySystemBackground,
       navigationBar: CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.tertiarySystemBackground,
+          border: null,
           middle: Row(
         children: [
           Container(
@@ -16,14 +20,14 @@ Widget topInterface(BuildContext context) {
             child: Text(
               'My Books',
               style: TextStyle(
-                fontSize: 38,
+                fontSize: 35,
                 fontWeight: FontWeight.w700,
               ),
             ),
           )
         ],
       )),
-      child: SafeArea(
+      child: Container( color: CupertinoColors.secondarySystemGroupedBackground , margin: const EdgeInsets.fromLTRB(0, 5, 0, 0), child: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Column(
@@ -34,7 +38,7 @@ Widget topInterface(BuildContext context) {
             ],
           ),
         ),
-      ),
+      ), )
     ),
   );
 }

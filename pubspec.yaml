@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   functional_widget: ^0.10.2
   functional_widget_annotation: ^0.10.0
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -55,8 +56,21 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat-Italic.ttf
+          style: italic
+  assets:
+    - assets/fonts/
 
-  # The following line ensures that the Material Icons font is
+
+
+
+        # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true

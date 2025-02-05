@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'top_ios_interface.dart';
+part of 'search_string.dart';
 
 // **************************************************************************
 // FunctionalWidgetGenerator
 // **************************************************************************
 
-class TopInterface extends StatelessWidget {
-  const TopInterface({Key? key}) : super(key: key);
+class SearchString extends StatelessWidget {
+  const SearchString({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext _context) => topInterface(_context);
+  Widget build(BuildContext _context) => searchString(_context);
 }

@@ -26,14 +26,18 @@ class ProgressBar extends StatelessWidget {
                 Text(
                   '${value.toInt()}',
                   style: TextStyle(
-                       color: Colors.black45 , fontFamily: 'Montserrat',
-                    fontSize: 14,),
+                    color: Colors.black45,
+                    fontFamily: 'Montserrat',
+                    fontSize: 14,
+                  ),
                 ),
                 Text(
                   '${maxValue.toInt()}',
                   style: TextStyle(
-                       color: Colors.black45 , fontFamily: 'Montserrat',
-                    fontSize: 14,),
+                    color: Colors.black45,
+                    fontFamily: 'Montserrat',
+                    fontSize: 14,
+                  ),
                 )
               ],
             ),

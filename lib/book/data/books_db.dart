@@ -81,8 +81,10 @@ class BooksInfo {
   Future<void> deleteInfoFromDB() async {
     final db = await database;
     await db.execute('DELETE FROM books');
-    print('удалены йоу');
+    print('deleted');
   }
+
+
 
 }
 

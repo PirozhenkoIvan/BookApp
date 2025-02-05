@@ -1,7 +1,7 @@
-import 'package:book_app/first_screen/books_grid_database.dart';
+import 'package:book_app/first_screen/books_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'top_ios_interface.dart';
+import 'search_string.dart';
 
 
 class FirstScreenInterface extends StatefulWidget {
@@ -18,8 +18,8 @@ class _FirstScreenInterfaceState extends State<FirstScreenInterface> {
     return Scaffold(
       body:  Column(
         children: [
-          TopInterface(),
-          BooksGridWithDB(),
+          SearchString(),
+          BooksGrid(),
         ],
       ),
     );

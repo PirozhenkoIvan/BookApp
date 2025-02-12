@@ -3,39 +3,38 @@ import 'package:book_app/book/ui/book_item.dart';
 import 'package:book_app/book/ui/book_colors.dart';
 import 'package:book_app/book/data/books_db.dart';
 import 'package:book_app/store/book_store.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
-class BooksGrid extends StatefulWidget {
-  @override
-  State<BooksGrid> createState() => BooksGridState();
-}
+// class BooksGrid extends StatefulWidget {
+//   @override
+//   State<BooksGrid> createState() => BooksGridState();
+// }
+//
+// class BooksGridState extends State<BooksGrid> {
+//   @override
+//   void initState() {
+//     super.initState();
+//     bookStore.listOfBooksStore();
+//   }
+//
+//   @override
 
-class BooksGridState extends State<BooksGrid> {
-  late Future<List<BookDb>> futureBooks;
+part 'books_grid.g.dart';
 
-  @override
-  void initState() {
-    super.initState();
-    bookStore.insertBook(
-      BookDb(
-        bookName: 'Ivan Memoirs',
-        time: '99:99',
-        progress: 200,
-        pageAmount: 777,
-      ),
-    );
-    futureBooks = bookStore.listOfBooksStore();
-  }
+@hwidget
+Widget booksGrid(BuildContext context) {
+  final bookList = useState(bookStore.bookList);
 
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<List<BookDb>>(
-      future: futureBooks,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
-        }
-        final books = snapshot.data ?? [];
-        return Padding(
+  useEffect(() {
+    if(bookStore.bookList.isEmpty){
+      bookStore.listOfBooksStore();
+    }
+  });
+
+  return Observer(
+      builder: (_) => Padding(
             padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
             child: Container(
               height: 600,
@@ -47,9 +46,9 @@ class BooksGridState extends State<BooksGrid> {
                   mainAxisSpacing: 5,
                   childAspectRatio: 0.7,
                 ),
-                itemCount: books.length,
+                itemCount: bookList.value.length,
                 itemBuilder: (context, index) {
-                  final book = books[index];
+                  final book = bookList.value[index];
                   final color = appColors[index % appColors.length];
                   return Book(
                     bookName: book.bookName,
@@ -60,8 +59,6 @@ class BooksGridState extends State<BooksGrid> {
                   );
                 },
               ),
-            ));
-      },
-    );
-  }
+            ),
+          ));
 }

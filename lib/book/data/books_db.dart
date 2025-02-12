@@ -66,7 +66,8 @@ class BooksInfo {
 
   Future<List<BookDb>> listOfBooks() async {
     final db = await database;
-    final List<Map<String, Object?>> maps = await db.rawQuery('SELECT * FROM  books');
+    final List<Map<String, Object?>> maps =
+        await db.rawQuery('SELECT * FROM  books');
 
     return maps.map((book) {
       return BookDb(
@@ -83,8 +84,4 @@ class BooksInfo {
     await db.execute('DELETE FROM books');
     print('deleted');
   }
-
-
-
 }
-

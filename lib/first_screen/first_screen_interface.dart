@@ -3,18 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'search_string.dart';
 
+part 'first_screen_interface.g.dart';
 
-class FirstScreenInterface extends StatefulWidget {
-  const FirstScreenInterface({Key? key}) : super(key: key);
-
-  @override
-  State<FirstScreenInterface> createState() => _FirstScreenInterfaceState();
-}
-
-class _FirstScreenInterfaceState extends State<FirstScreenInterface> {
-
-  @override
-  Widget build(BuildContext context) {
+@swidget
+  Widget firstScreenInterface(BuildContext context) {
     return Scaffold(
       body:  Column(
         children: [
@@ -24,4 +16,3 @@ class _FirstScreenInterfaceState extends State<FirstScreenInterface> {
       ),
     );
   }
-}

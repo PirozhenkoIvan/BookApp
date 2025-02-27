@@ -25,12 +25,20 @@ mixin _$BookStore on _BookStore, Store {
     });
   }
 
-  late final _$listOfBooksStoreAsyncAction =
-      AsyncAction('_BookStore.listOfBooksStore', context: context);
+  late final _$loudBooksAsyncAction =
+      AsyncAction('_BookStore.loudBooks', context: context);
 
   @override
-  Future<void> listOfBooksStore() {
-    return _$listOfBooksStoreAsyncAction.run(() => super.listOfBooksStore());
+  Future<void> loudBooks() {
+    return _$loudBooksAsyncAction.run(() => super.loudBooks());
+  }
+
+  late final _$insertBookAsyncAction =
+      AsyncAction('_BookStore.insertBook', context: context);
+
+  @override
+  Future<void> insertBook(BookDb book) {
+    return _$insertBookAsyncAction.run(() => super.insertBook(book));
   }
 
   @override

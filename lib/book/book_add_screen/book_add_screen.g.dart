@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'first_screen_interface.dart';
+part of 'book_add_screen.dart';
 
 // **************************************************************************
 // FunctionalWidgetGenerator
 // **************************************************************************
 
-class FirstScreenInterface extends StatelessWidget {
-  const FirstScreenInterface({Key? key}) : super(key: key);
+class AddBook extends HookWidget {
+  const AddBook({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext _context) => firstScreenInterface(_context);
+  Widget build(BuildContext _context) => addBook(_context);
 }

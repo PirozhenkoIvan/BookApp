@@ -5,12 +5,14 @@ import 'package:sqflite/sqflite.dart';
 class BookDb {
   final String bookName;
   final String time;
+  final String color;
   final double progress;
   final double pageAmount;
 
   BookDb({
     required this.bookName,
     required this.time,
+    required this.color,
     required this.progress,
     required this.pageAmount,
   });
@@ -19,6 +21,7 @@ class BookDb {
     return {
       'bookName': bookName,
       'time': time,
+      'color' : color,
       'progress': progress,
       'pageAmount': pageAmount,
     };
@@ -26,17 +29,17 @@ class BookDb {
 
   @override
   String toString() {
-    return 'Book {bookName: $bookName, time: $time, progress: $progress, pageAmount: $pageAmount}';
+    return 'Book {bookName: $bookName, time: $time, color: $color progress: $progress, pageAmount: $pageAmount}';
   }
 }
 
-class BooksInfo {
+class BookDao {
   Future<Database> get database async {
     return openDatabase(
       join(await getDatabasesPath(), 'books_database.db'),
       onCreate: (db, version) {
         return db.execute(
-          'CREATE TABLE books(bookName TEXT PRIMARY KEY, time TEXT, progress INTEGER, pageAmount INTEGER)',
+          'CREATE TABLE books(bookName TEXT PRIMARY KEY, time TEXT, color TEXT, progress INTEGER, pageAmount INTEGER)',
         );
       },
       version: 1,
@@ -73,6 +76,7 @@ class BooksInfo {
       return BookDb(
         bookName: book['bookName'] as String,
         time: book['time'] as String,
+        color: book['color'] as String,
         progress: (book['progress'] as num).toDouble(),
         pageAmount: (book['pageAmount'] as num).toDouble(),
       );
@@ -81,6 +85,7 @@ class BooksInfo {
 
   Future<void> deleteInfoFromDB() async {
     final db = await database;
+   // await db.execute('DROP TABLE books');
     await db.execute('DELETE FROM books');
     print('deleted');
   }

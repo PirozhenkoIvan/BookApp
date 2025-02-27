@@ -7,25 +7,27 @@ part 'book_store.g.dart';
 class BookStore = _BookStore with _$BookStore;
 
 abstract class _BookStore with Store {
-  final bookInfo = BooksInfo();
+  final bookDao = BookDao();
 
   @observable
   ObservableList<BookDb> bookList = ObservableList<BookDb>();
 
   @action
-  Future<void> listOfBooksStore() async {
-    final listOfBooks = await bookInfo.listOfBooks();
+  Future<void> loudBooks() async {
+    final listOfBooks = await bookDao.listOfBooks();
     bookList.addAll(listOfBooks);
-    print(bookList);
   }
-
+  @action
   Future<void> insertBook(BookDb book) async {
-    await bookInfo.insertBook(book);
+  await bookDao.insertBook(book);
+  final newBook = book;
+  bookList.add(newBook);
   }
 
   Future<void> deleteInfoFromTableDB() async {
-    bookInfo.deleteInfoFromDB();
+    bookDao.deleteInfoFromDB();
   }
+
 }
 
 final BookStore bookStore = BookStore();

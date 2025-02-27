@@ -219,6 +219,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_colorpicker:
+    dependency: "direct main"
+    description:
+      name: flutter_colorpicker
+      sha256: "969de5f6f9e2a570ac660fb7b501551451ea2a1ab9e2097e89475f60e07816ea"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   flutter_hooks:
     dependency: "direct main"
     description:
@@ -227,6 +235,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.20.5"
+  flutter_hsvcolor_picker:
+    dependency: "direct main"
+    description:
+      name: flutter_hsvcolor_picker
+      sha256: f3480d7beaf4d3a3b76512a0c149a3b698076c8cf721bc515cded30de37ded6a
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.5.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -440,6 +456,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  nested_scroll_view_plus:
+    dependency: transitive
+    description:
+      name: nested_scroll_view_plus
+      sha256: "81ad080fac8368ae1406d59c34799845cea463ba98a9459f464d71dd8c2f3d3a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   package_config:
     dependency: transitive
     description:
@@ -525,6 +549,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  snap_scroll_physics:
+    dependency: transitive
+    description:
+      name: snap_scroll_physics
+      sha256: "253249c8a07526cd18ada11720126c72f09657096e8c52f8754c377629b72bf3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1+3"
   source_gen:
     dependency: transitive
     description:
@@ -613,6 +645,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
+  super_cupertino_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: super_cupertino_navigation_bar
+      sha256: c725330bc7f135862ffe7c4e1f04772a35740d78f2f5d97a7200b910638f7668
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
   synchronized:
     dependency: transitive
     description:

@@ -1,8 +1,7 @@
+import 'package:book_app/first_screen/book_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'first_screen/first_screen_interface.dart';
-
-
+import 'package:book_app/book/book_add_screen/book_add_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,9 +13,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      home: FirstScreenInterface(),
-
+    return MaterialApp(
+      home: BookScreen(),
+      initialRoute: '/',
+      routes: {
+        '/AddBookScreen': (context) => const AddBook(),
+      },
     );
   }
 }

@@ -6,7 +6,7 @@ part of 'books_grid.dart';
 // FunctionalWidgetGenerator
 // **************************************************************************
 
-class BooksGrid extends StatelessWidget {
+class BooksGrid extends HookWidget {
   const BooksGrid({Key? key}) : super(key: key);
 
   @override

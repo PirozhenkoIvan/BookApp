@@ -1,10 +1,10 @@
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:flutter/cupertino.dart';
 
-part 'top_ios_interface.g.dart';
+part 'search_string.g.dart';
 
 @swidget
-Widget topInterface(BuildContext context) {
+Widget searchString(BuildContext context) {
   return Container(
     margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
     color: CupertinoColors.tertiarySystemBackground,

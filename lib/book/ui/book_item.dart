@@ -7,7 +7,10 @@ part 'book_item.g.dart';
 
 @swidget
 Widget book(BuildContext context, { required Color color, required String bookName , required double progress , required String time, required double pageAmount}){
-return Container(
+
+  double percentsOfProgress = (progress / pageAmount) * 100;
+
+  return Container(
   height: 178,
   width: 124,
   margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -42,7 +45,7 @@ return Container(
       Container(
         margin: const EdgeInsets.fromLTRB(10, 3, 0, 0),
         alignment: Alignment.topLeft,
-        child: Text('$progress',
+        child: Text('${percentsOfProgress.toStringAsFixed(1)}%',
           style: TextStyle(
             color: Colors.black45,
             fontFamily: 'Montserrat',
